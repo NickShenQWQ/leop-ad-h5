@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <script src="./static/lib/js/amfe-flexible.min.js"></script>
+  <title>2019我们的小目标</title>
+
+  <!-- <script src="./node_modules/amfe-flexible/index.js"></script> -->
+  <meta http-equiv="Cache-Control" name="no-store" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <!-- <script src="./static/lib/js/flexible.js"></script> -->
+  <!-- <link rel="stylesheet" href="./static/lib/css/flexible.css">  -->
+  <link rel="stylesheet" href="./static/lib/css/base.css">
+  <script src="./static/lib/js/jquery-2.1.4.js"></script>
+  <script src="./static/lib/js/dt_wechatAuth.js"></script>
+  <script src="./static/lib/js/TweenMax.min.js"></script>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"> </script> 
+  <script src="./static/lib/js/html2canvas.min.js"></script>
+  <!-- <script src="./src/components/global.js"></script> -->
+    
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="./static/lib/js/share.js"></script>
+  <script>
+    var _this = this;
+    var wechatAuth = new WECHATAUTH('http://leop1800wechat.dwechat.com');
+        wechatAuth.onReady(function (res) {
+          console.log('res',res.Data);
+        })
+    //分享
+
+
+    var wechatShare = new _SHARE();
+    wechatShare.registerFunc('commonShare', function () {
+      wx.onMenuShareAppMessage({
+        title: '快来一起制定,2019我们的小目标!', // 分享标题
+        desc: '参与活动有机会获得网红日历噢~', // 分享描述
+        link: window.location.href.split('?')[0].split('#/')[0], // 分享链接
+        imgUrl: "http://leop1902.dwechat.com/ad/fenxiang.jpg", // 分享图标
+        success: function () {
+
+        }
+      });
+      wx.onMenuShareTimeline({
+        title: '快来一起制定,2019我们的小目标!', // 分享标题
+        link: window.location.href.split('?')[0].split('#/')[0], // 分享链接
+        imgUrl: "http://leop1902.dwechat.com/ad/fenxiang.jpg", // 分享图标
+        success: function () {
+
+        }
+      });
+    })
+    wechatShare.onReady(function () {
+      console.log(wechatShare);
+      wechatShare.invokeFunc('commonShare')();
+    })
+
+  </script>
+  <!-- //digitiger1百度统计 -->
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2fbf71620dae8e39efc71be89c0d380b";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+      
+      
+      
+
+
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
